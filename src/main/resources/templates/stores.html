@@ -5,13 +5,25 @@
     <title>Stores</title>
 </head>
 <body>
+<tbody>
 <p>
     This is Stores page.
 </p>
-<div>
-    <tr th:each="list : ${storesList}">
-        <td th:text="${list.value}"></td>
-    </tr>
-</div>
+<table id = "eventsTable">
+    <thead>
+        <tr>
+            <th>가게명</th>
+            <th>가게 주소</th>
+            <th>할인율</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="store : ${stores}">
+            <td th:text="${store.name}"></td>
+            <td th:text="${store.address}"></td>
+            <td th:text="${store.discountRate}"></td>
+        </tr>
+    </tbody>
+</table>
 </body>
 </html>

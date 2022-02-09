@@ -1,15 +1,50 @@
 <!DOCTYPE html>
-
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Store-Detail</title>
 </head>
-<body>
-<p>
-    This is store-detail page.
-</p>
-<div>
-
-</div>
+<table id = "menusTable">
+    <tbody>
+    <tr th:each="menu, index : ${menus}">
+        <td colspan="3" th:if="${index.index} == 0">[Best Menu]</td>
+        <th:block th:if="${menu.category == T(com.example.advertisement.constant.MenuCategory).BEST}">
+            <td th:text="${menu.name}"></td>
+            <td th:text="${menu.price}"></td>
+            <td th:text="${menu.memo}"></td>
+        </th:block>
+    </tr>
+    <tr th:each="menu, index : ${menus}">
+        <td colspan="3" th:if="${index.index} == 0">[Set Menu]</td>
+        <th:block th:if="${menu.category == T(com.example.advertisement.constant.MenuCategory).SET}">
+            <td th:text="${menu.name}"></td>
+            <td th:text="${menu.price}"></td>
+            <td th:text="${menu.memo}"></td>
+        </th:block>
+    </tr>
+    <tr th:each="menu, index : ${menus}">
+        <td colspan="3" th:if="${index.index} == 0">[Main Menu]</td>
+        <th:block th:if="${menu.category == T(com.example.advertisement.constant.MenuCategory).MAIN}">
+            <td th:text="${menu.name}"></td>
+            <td th:text="${menu.price}"></td>
+            <td th:text="${menu.memo}"></td>
+        </th:block>
+    <tr th:each="menu, index : ${menus}">
+        <td colspan="3" th:if="${index.index} == 0">[Side Menu]</td>
+        <th:block th:if="${menu.category == T(com.example.advertisement.constant.MenuCategory).SIDE}">
+            <td th:text="${menu.name}"></td>
+            <td th:text="${menu.price}"></td>
+            <td th:text="${menu.memo}"></td>
+        </th:block>
+    <tr th:each="menu, index : ${menus}">
+        <td colspan="3" th:if="${index.index} == 0">[Drink Menu]</td>
+        <th:block th:if="${menu.category == T(com.example.advertisement.constant.MenuCategory).DRINK}">
+            <td th:text="${menu.name}"></td>
+            <td th:text="${menu.price}"></td>
+            <td th:text="${menu.memo}"></td>
+        </th:block>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
