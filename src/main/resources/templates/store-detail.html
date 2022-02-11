@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Store-Detail</title>
+<style>
+
+</style>
 </head>
-<table id = "menusTable">
+<table id = "menusTable" style="width: 1500px; height: 20px; border:1px solid gray;">
     <tbody>
     <tr th:each="menu, index : ${menus}">
         <td colspan="3" th:if="${index.index} == 0">[Best Menu]</td>
